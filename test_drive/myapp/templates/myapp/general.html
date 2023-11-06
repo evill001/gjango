@@ -1,0 +1,25 @@
+{% extends 'myapp/index.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Активные записи</h1>
+    {% if tasks %}
+        {% for el in tasks %}
+             <div class="entry">
+                <div>
+                    <p>Клиент: <span> {{ el.name }} </span></p>
+                    <p>Email: <span> {{ el.mail }} </span></p>
+                </div>
+                <div>
+                    <p>Телефон: <span> {{ el.phone_num }} </span></p>
+                    <p>Автомобиль: <span> {{ el.name_car }} </span></p>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Записей нет!</p>
+    {% endif %}
+{% endblock %}

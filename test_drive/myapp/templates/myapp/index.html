@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .navbar-light{
+            background: #621F1F;
+        }
+
+        .navbar-brand{
+           color: white;
+           margin-left: 20px;
+        }
+
+        .navbar-brand:hover{
+            color: white;
+        }
+
+        .nav-link{
+            color: white;
+        }
+
+        .nav-link:hover{
+            text-decoration: underline;
+            color: white;
+        }
+
+        .container{
+            margin: 78px auto;
+        }
+        .container h1{
+            font-size: 20px;
+        }
+
+        .entry{
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            width: 779px;
+            height: 101px;
+            border-radius: 5px;
+            border: 1px solid #621F1F;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+
+            .entry div:nth-child(1){
+                margin-left: 30px;
+            }
+
+            .entry div:nth-child(2){
+                margin-right: 250px;
+            }
+
+            .entry div p{
+                color: #727272;
+                font-size: 16px;
+                font-weight: 300;
+            }
+
+            .entry div p span{
+                color: #000;
+                font-size: 18px;
+            }
+
+            .form{
+                width: 705px;
+                height: 503px;
+                border-radius: 5px;
+                background: #D9D9D9;
+            }
+
+            .form h1{
+                font-size: 24px;
+                padding: 36px 0 0 45px;
+                text-transform: uppercase;
+            }
+
+            .form form{
+                width: 612px;
+                margin: 0 auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+
+            .form form input{
+                width: 289px;
+                height: 42px;
+                font-size: 18px;
+                font-weight: 400;
+                margin-top: 30px;
+            }
+
+            .form form textarea{
+                width: 612px;
+                height: 149px;
+                font-size: 20px;
+                font-weight: 400;
+                margin-top: 30px;
+            }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="{% url 'home' %}">TESTdrive</a>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Главная</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'about' %}">О компании</a>
+      </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'create' %}">Тест-драйв</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+{% block content %}{% endblock %}
+</div>
+
+</body>
+</html>
